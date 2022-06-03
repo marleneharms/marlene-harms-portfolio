@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block page %}<body class="hobbies">{% endblock %}
+{% block content %}
+    <div class="hobbies-page">
+        <h2>Nachos's Hobbies</h2>
+        <div id="nacho-hobbies">
+            {% for h in nacho_hobbies -%}
+            <li>
+                <ul>{{h['desc']}}</ul>
+            </li>
+            {% endfor %}
+        </div>
+
+        <h2>Mateo's Hobbies</h2>
+        <div id="mateo-hobbies">
+            {% for h in mateo_hobbies -%}
+            <li>
+                <ul>{{h['desc']}}</ul>
+            </li>
+            {% endfor %}
+        </div>
+
+        <h2>Marlenes's Hobbies</h2>
+        <div id="marlene-hobbies">
+            {% for h in marlene_hobbies -%}
+            <li>
+                <ul>{{h['desc']}}</ul>
+            </li>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
