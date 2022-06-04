@@ -133,3 +133,32 @@ li{
 .hobbies-page {
     margin-left: 1rem;
 }
+
+.hobbies-page img {
+    border-radius: 50%;
+    max-width: 10%;
+    max-height: 10%;
+    float: left;        
+    padding: 20px;
+}
+
+.float-children > * {
+    float:left;
+    margin-right:5px;
+}
+
+/* this is called a clearfix. it makes sure that the container's children floats are cleared, without using extra markup */
+
+.float-container{
+    *zoom:1 /* for IE */
+}
+
+.float-container:before,
+.float-container:after {
+    content: " ";
+    display: table;
+}
+
+.float-container:after {
+    clear: both;
+}
