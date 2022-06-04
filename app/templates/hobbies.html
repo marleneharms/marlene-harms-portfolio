@@ -2,31 +2,40 @@
 {% block page %}<body class="hobbies">{% endblock %}
 {% block content %}
     <div class="hobbies-page">
-        <h2>Nachos's Hobbies</h2>
-        <div id="nacho-hobbies">
-            {% for h in nacho_hobbies -%}
-            <li>
-                <ul>{{h['desc']}}</ul>
-            </li>
-            {% endfor %}
+        <div class="float-container float-children" id="nacho-hobbies">
+            <img src="./static/img/logo.jpg">
+            <div>
+                <h2>Nachos's Hobbies</h2>
+                {% for h in nacho_hobbies -%}
+                <li>
+                    <ul>{{h['desc']}}</ul>
+                </li>
+                {% endfor %}
+            </div>
+        </div>
+        
+        <div class="float-container float-children" id="mateo-hobbies">
+            <img src="./static/img/logo.jpg">
+            <div>
+                <h2>Mateo's Hobbies</h2>
+                {% for h in mateo_hobbies -%}
+                <li>
+                    <ul>{{h['desc']}}</ul>
+                </li>
+                {% endfor %}
+            </div>
         </div>
 
-        <h2>Mateo's Hobbies</h2>
-        <div id="mateo-hobbies">
-            {% for h in mateo_hobbies -%}
-            <li>
-                <ul>{{h['desc']}}</ul>
-            </li>
-            {% endfor %}
-        </div>
-
-        <h2>Marlenes's Hobbies</h2>
-        <div id="marlene-hobbies">
-            {% for h in marlene_hobbies -%}
-            <li>
-                <ul>{{h['desc']}}</ul>
-            </li>
-            {% endfor %}
+        <div class="float-container float-children" id="marlene-hobbies">
+            <img src="./static/img/logo.jpg">
+            <div>
+                <h2>Marlenes's Hobbies</h2>
+                {% for h in marlene_hobbies -%}
+                <li>
+                    <ul>{{h['desc']}}</ul>
+                </li>
+                {% endfor %}
+            </div>
         </div>
     </div>
 {% endblock %}
