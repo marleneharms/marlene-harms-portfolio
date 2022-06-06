@@ -1,15 +1,21 @@
-const app = document.getElementById('type');
+const app = document.getElementById("type");
 
 const typewriter = new Typewriter(app, {
-    loop: true
+  loop: true,
 });
 
-typewriter.typeString('Hello World!')
-    .pauseFor(2500)
-    .deleteAll()
-    .typeString('Strings can be removed')
-    .pauseFor(2500)
-    .deleteChars(7)
-    .typeString('<strong>altered!</strong>')
-    .pauseFor(2500)
-    .start();
+const timeToWait = 1500;
+
+typewriter
+  .typeString("marlene.init(👋)")
+  .pauseFor(timeToWait)
+  .deleteAll()
+  .typeString("I am Software Engineer")
+  .pauseFor(timeToWait)
+  .deleteAll()
+  .typeString("And a PE Fellow!")
+  .pauseFor(timeToWait)
+  .deleteAll()
+  .typeString("<strong>Check out more about me ↓</strong>")
+  .pauseFor(timeToWait)
+  .start();
