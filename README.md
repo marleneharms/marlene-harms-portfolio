@@ -8,6 +8,13 @@ Welcome to the MLH Fellowship! During Week 1, you'll be working with Flask to bu
 ![alt text for screen readers](./assets/career.png "Text to show on mouseover").
 ![alt text for screen readers](./assets/places.png "Text to show on mouseover").
 
+## Build with
+- [Flask](https://flask.palletsprojects.com/)
+- [Markdown](https://python-markdown.github.io/)
+- [Bootstrap](https://getbootstrap.com/)
+- [Python](https://www.python.org/)
+- [Git](https://git-scm.com/)
+
 ## Tasks
 
 Once you've got your portfolio downloaded and running using the instructions below, you should attempt to complete the following tasks.
