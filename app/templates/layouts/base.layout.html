@@ -10,39 +10,53 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+     {% block styles %}{% endblock %}
     <title>Document</title>
   </head>
   <body>
-    <header class="sticky-top ">
-        <ul class="nav justify-content-center">
-          <li class="nav-item">
-            <a class="nav-link active" href="{{ url_for('about') }}"><h3 class="lead text-secondary">About me</h3></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ url_for('about') }}"><h3 class="lead text-secondary">Expirence</h3></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ url_for('places') }}"><h3 class="lead text-secondary">Map</h3></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ url_for('index') }}"><h3 class="lead text-secondary">Hobbies</h3></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ url_for('index') }}"><h3 class="lead text-secondary">Contact me</h3></a>
-          </li>
-        </ul>
+    <header class="sticky-top">
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link active" href="{{ url_for('about') }}"
+            ><h3 class="lead text-secondary">About me</h3></a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('about') }}"
+            ><h3 class="lead text-secondary">Expirence</h3></a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('places') }}"
+            ><h3 class="lead text-secondary">Map</h3></a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('index') }}"
+            ><h3 class="lead text-secondary">Hobbies</h3></a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('index') }}"
+            ><h3 class="lead text-secondary">Contact me</h3></a
+          >
+        </li>
+      </ul>
     </header>
 
     {% block content %}{% endblock %}
 
-    <footer
-
     <!-- Footer -->
-    <footer class="text-center text-lg-start bg-light text-muted fixed-bottom"> 
+    <footer class="text-center text-lg-start bg-light text-muted fixed-bottom">
       <!-- Copyright -->
-      <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+      <div
+        class="text-center p-4"
+        style="background-color: rgba(0, 0, 0, 0.05)"
+      >
         © 2021 Copyright:
-        <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        <a class="text-reset fw-bold" href="https://mdbootstrap.com/"
+          >MDBootstrap.com</a
+        >
       </div>
       <!-- Copyright -->
     </footer>
@@ -63,5 +77,7 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <script src="{{url_for('static', filename='js/type.js')}}"></script>
   </body>
 </html>

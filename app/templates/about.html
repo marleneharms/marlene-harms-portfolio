@@ -1,38 +1,25 @@
-{% extends "layouts/base.layout.html" %} {% block content %}
+{% extends "layouts/base.layout.html" %} {% block styles %}
 
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@700&display=swap"
+  rel="stylesheet"
+/>
+<link href="{{url_for('static', filename='css/about.css')}}" rel="stylesheet" />
+{% endblock %} 
+
+{% block content %}
 <!-- about me -->
 <div class="container">
   <div class="column">
     <!-- user image -->
     <div class="row justify-content-center m-4">
-      <img src="..." width="200" height="200" class="rounded" />
+      <img src="{{url_for('static', filename='img/marlene.jpeg')}}"
+      class="rounded-circle" width="200" height="200" " />
     </div>
 
-    <!-- school name -->
-    <div class="row justify-content-center m-4">
-      <p class="h2 text-white">University Name</p>
-    </div>
-
-    <!-- content -->
-    <div class="row justify-content-center m-4">
-      <p class="h3 text-white">About Me</p>
-    </div>
-
-    <div class="row justify-content-center m-4">
-      <p class="text-white">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Et maxime
-        accusantium nisi labore sequi iusto consequatur ipsam repellendus
-        distinctio cupiditate minima ab facere cum esse, id ea? Sequi,
-        voluptatibus eum. Lorem ipsum dolor sit amet consectetur adipisicing
-        elit. Nostrum labore facere recusandae, nobis velit quo exercitationem
-        aliquam distinctio voluptatem rem dolorem quisquam error, nulla et
-        reiciendis mollitia blanditiis? Veritatis, magni. Lorem ipsum dolor sit
-        amet consectetur adipisicing elit. Aliquam unde, ad quaerat vitae eos
-        laudantium error voluptatum autem, quisquam architecto dolores in
-        dolorum necessitatibus minima, temporibus eum. Magni, dolorum quos?
-      </p>
-    </div>
+    <div class="row justify-content-center m-4" id="type"></div>
   </div>
-</div>
 
-{% endblock %}
+  {% endblock %}
