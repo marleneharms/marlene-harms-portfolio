@@ -25,6 +25,10 @@ def about():
 def places():
     return render_template('places.html', maps=placesData)
 
-@app.route('/places')
-def places():
-    return render_template('places.html', maps=placesData)
+@app.route('/hobbies')
+def hobbies():
+    nacho_hobbies = [{'desc': 'Nacho hobby 1'}, {'desc': 'Nacho hobby 2'}]
+    mateo_hobbies = [{'desc': 'Mateo hobby 1'}, {'desc': 'Mateo hobby 2'}]
+    marlene_hobbies = [{'desc': 'Marlene hobby 1'}, {'desc': 'Marlene hobby 2'}]
+
+    return render_template('hobbies.html', title="Hobbies", url=os.getenv("URL"), nacho_hobbies=nacho_hobbies, mateo_hobbies=mateo_hobbies, marlene_hobbies=marlene_hobbies) 
