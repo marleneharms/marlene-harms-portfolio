@@ -1,0 +1,60 @@
+{% extends "layouts/base.layout.html" %}
+{% block page %}<body class="hobbies">{% endblock %}
+{% block content %}
+    <div class="hobbies-page">
+        <h1 class="text-white text-center mb-lg-4">Hobbies</h1>
+
+        <div class="container-fluid mb-lg-5" id="nacho-hobbies">
+            <div class="row">
+                <div class="col-xl-3 col-lg-3 col-md-3">
+                    <img src="../static/img/nacho.jpeg" alt="Nacho" class="img-fluid rounded-circle">
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6">
+                    <h4 class="text-white">Nachos's hobbies</h4>
+                    {% for h in nacho_hobbies -%}
+                    <ul class="list-unstyled text-white">
+                        <li>
+                            {{h['desc']}}
+                        </li>
+                    </ul>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid mb-lg-5" id="mateo-hobbies">
+            <div class="row">
+                <div class="col-xl-3 col-lg-3 col-md-3">
+                    <img src="../static/img/mateo.jpeg" alt="Nacho" class="img-fluid rounded-circle">
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6">
+                    <h4 class="text-white">Mateo's hobbies</h4>
+                    {% for h in mateo_hobbies -%}
+                    <ul class="list-unstyled text-white">
+                        <li>
+                            {{h['desc']}}
+                        </li>
+                    </ul>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid mb-lg-5" id="marlene-hobbies">
+            <div class="row">
+                <div class="col-xl-3 col-lg-3 col-md-3">
+                    <img src="../static/img/marlene.jpeg" alt="Nacho" class="img-fluid rounded-circle">
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6">
+                    <h4 class="text-white">Marlene's hobbies</h4>
+                    {% for h in marlene_hobbies -%}
+                    <ul class="list-unstyled text-white">
+                        <li>
+                            {{h['desc']}}
+                        </li>
+                    </ul>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+{% endblock %}
