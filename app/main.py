@@ -37,3 +37,7 @@ def hobbies():
 
     return render_template('hobbies.html', title="Hobbies", url=os.getenv("URL"), nacho_hobbies=nacho_hobbies, mateo_hobbies=mateo_hobbies, marlene_hobbies=marlene_hobbies) 
 
+
+if __name__ == '__main__':
+    server_port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=server_port, debug=False)
