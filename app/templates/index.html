@@ -1,9 +1,32 @@
-{% extends "layout.html" %} {% block title %}{{ title }}{% endblock %} {% block page %}
+{% extends "layouts/base.layout.html" %} {% block content %}
 
-<body>{% endblock %} {% block content %}
-    <div class="profile">
-        <div id="profile-picture" class="profile-picture">
-            <img src="./static/img/logo.jpg">
+<div class="container">
+  <div class="column">
+    <div class="row justify-content-center ">
+
+
+      <div class="card text-white bg-secondary m-4" style="width: 18rem">
+        <img src="..." class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">Mateo Martinez</h5>
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+          <a href="{{ url_for('about') }}" class="btn btn-primary">Learn More About Me</a>
+        </div>
+      </div>
+
+
+      <div class="card text-white bg-secondary m-4" style="width: 18rem">
+        <img src="..." class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+          <a href="{{ url_for('about') }}" class="btn btn-primary">Learn More About Me</a>
         </div>
       </div>
 
@@ -23,4 +46,7 @@
 
 
     </div>
-    {% endblock %}
+  </div>
+</div>
+
+{% endblock %}
