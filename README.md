@@ -2,6 +2,12 @@
 
 Welcome to the MLH Fellowship! During Week 1, you'll be working with Flask to build a portfolio site. This site will be the foundation for activities we do in future weeks so spend time this week making it your own and reflect your personality!
 
+## Sneak Peek
+
+![alt text for screen readers](./assets/about.png "Text to show on mouseover").
+![alt text for screen readers](./assets/career.png "Text to show on mouseover").
+![alt text for screen readers](./assets/places.png "Text to show on mouseover").
+
 ## Tasks
 
 Once you've got your portfolio downloaded and running using the instructions below, you should attempt to complete the following tasks.
@@ -77,3 +83,5 @@ You'll now be able to access the website at `localhost:5000` or `127.0.0.1:5000`
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
+
+
