@@ -24,3 +24,7 @@ def about():
 @app.route('/places')
 def places():
     return render_template('places.html', maps=placesData)
+
+@app.route('/places')
+def places():
+    return render_template('places.html', maps=placesData)
