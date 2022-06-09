@@ -1,10 +1,12 @@
-{% extends "layouts/base.layout.html" %}
-{% block content %}
+{% extends "layouts/base.layout.html" %} {% block content %}
 
 <div class="container">
   <div class="col">
     <div class="row justify-content-center">
-      <img class="rounded-circle border-none shadow-lg m-4" src="{{url_for('static', filename='img/mateo.jpeg')}}"/>
+      <img
+        class="rounded-circle border-none shadow-lg m-4"
+        src="{{url_for('static', filename='img/mateo.jpeg')}}"
+      />
     </div>
 
     <div class="row justify-content-center">
@@ -13,65 +15,16 @@
 
     <div class="row mt-5 mb-5">
       <div class="col">
-        <div class="card border-white shadow-lg" >
+        <div class="card border-white shadow-lg">
           <div class="card-body text-center">
-            <h5 class="card-title">Card</h5>
-            <p class="card-text">Info</p>
+            <h5 class="card-title">Who Am I</h5>
+            {% for x in aboutData %}
+            <p class="card-text">{{x}}</p>
+            {% endfor %}
           </div>
         </div>
       </div>
-
-      <div class="col">
-        <div class="card border-white shadow-lg" >
-          <div class="card-body text-center">
-            <h5 class="card-title">Card</h5>
-            <p class="card-text">Info</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="card border-white shadow-lg" >
-          <div class="card-body text-center">
-            <h5 class="card-title">Card</h5>
-            <p class="card-text">Info</p>
-          </div>
-        </div>
-      </div>
-
     </div>
-
-
-    <div class="row mt-5 mb-5">
-      <div class="col">
-        <div class="card border-white shadow-lg" >
-          <div class="card-body text-center">
-            <h5 class="card-title">Card</h5>
-            <p class="card-text">Info</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="card border-white shadow-lg" >
-          <div class="card-body text-center">
-            <h5 class="card-title">Card</h5>
-            <p class="card-text">Info</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="card border-white shadow-lg" >
-          <div class="card-body text-center">
-            <h5 class="card-title">Card</h5>
-            <p class="card-text">Info</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-      
   </div>
 </div>
 
