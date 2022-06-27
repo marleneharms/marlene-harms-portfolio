@@ -1,10 +1,19 @@
 import os
+from peewee import MySQLDatabase
 from flask import Flask, render_template, request
 from dotenv import load_dotenv
 
 load_dotenv()
 app = Flask(__name__)
 
+mydb = MySQLDataBase(os.getenv("MYSQL_DATABASE"),
+    user=os.getenv("MYSQL_USER"),
+    passwd=os.getenv("MYSQL_PASSWORD"),
+    host=os.getenv("MYSQL_HOST"),
+    port=3306
+)
+
+print(mydb)
 
 placesData = {
     "marlene": "https://www.google.com/maps/d/u/0/embed?mid=1kwRac9a4QDa_pBgkNxwCidA5ocNJhyk&ehbc=2E312F",
