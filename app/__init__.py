@@ -1,7 +1,7 @@
 import os
 import datetime
 from playhouse.shortcuts import model_to_dict 
-from peewee import MySQLDatabase
+from peewee import *
 from flask import Flask, render_template, request
 from dotenv import load_dotenv
 
