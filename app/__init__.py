@@ -57,7 +57,7 @@ def get_time_line_posts():
 
 @app.route('/timeline')
 def timeline():
-    data = get_time_line_post()
+    data = get_time_line_posts()
     return render_template('timeline.html', data=data)
 
 @app.route('/')
