@@ -59,13 +59,12 @@
       <p class="card-text">Emil</p> -->
       <div class="row justify-content-center m-3">
         <div class="col">
-        {% for x in data.timeline_posts %}
+        {% for info in data.timeline_posts %}
         <div class="card border-none text-center shadow-lg mb-5" id="mytimeline">
-          <p class="card-text m-2"><span class="text-danger">Name:</span> {{x['name']}}</p>
-          <p class="card-text m-2"><span class="text-danger">Email:</span> {{x['email']}}</p>
-          <p class="card-text m-2"><span class="text-danger">Content:</span> {{x['content']}}</p>
-          <p class="card-text m-2"><span class="text-danger">Created At:</span> {{x['created_at']}}</p>
-          <p class="card-text m-2"><span class="text-danger">Id:</span> {{x['id']}}</p>
+          <p class="card-text m-2"><span class="text-danger">Name</span> {{info['name']}}</p>
+          <p class="card-text m-2"><span class="text-danger">Email</span> {{info['email']}}</p>
+          <p class="card-text m-2"><span class="text-danger">Content</span> {{info['content']}}</p>
+          <p class="card-text m-2"><span class="text-danger">Created At</span> {{info['created_at']}}</p>
         </div>
         {% endfor %}
       </div>
