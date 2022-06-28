@@ -7,4 +7,5 @@ pip install -r requirements.txt
 tmux new-session -d -s ENTER
 tmux detach -s ENTER
 tmux send-keys -t 0 "flask run --host="0.0.0.0"" ENTER
+systemctl restart myportfolio.service
 echo "Everything is working:D"
