@@ -59,15 +59,16 @@
     </div>
   </div>
   <!-- show the newly added timeline post -->
-<div class="container">
-  <h1>Timeline</h1>
-  <div class="card border-dark mb-3" style="width: 18rem">
-    <div class="card-body">
-      <h5 class="card-title">{{ timeline_post.name }}</h5>
-      <p class="card-text">{{ timeline_post.content }}</p>
-      <p class="card-text">{{ timeline_post.email }}</p>
-      <p class="card-text">{{ timeline_post.created_at }}</p>
+  <div class="container">
+    <h1>Timeline</h1>
+    <div class="card border-dark mb-3" style="width: 18rem">
+      <div class="card-body">
+        <h5 class="card-title">{{ timeline_post.name }}</h5>
+        <p class="card-text">{{ timeline_post.content }}</p>
+        <p class="card-text">{{ timeline_post.email }}</p>
+        <p class="card-text">{{ timeline_post.created_at }}</p>
+      </div>
     </div>
   </div>
+  {% endblock %}
 </div>
-{% endblock %}
