@@ -16,7 +16,7 @@
 <div class="container">
   <h1>Timeline</h1>
 
-  <form action="/api/timeline_post" method="POST">
+  <form id="form">
     <div class="form-group">
       <label>Name</label>
       <input
@@ -59,17 +59,52 @@
       <p class="card-text">Emil</p> -->
       <div class="row justify-content-center m-3">
         <div class="col">
-        {% for info in data.timeline_posts %}
-        <div class="card border-none text-center shadow-lg mb-5" id="mytimeline">
-          <p class="card-text m-2"><span class="text-danger">Name</span> {{info['name']}}</p>
-          <p class="card-text m-2"><span class="text-danger">Email</span> {{info['email']}}</p>
-          <p class="card-text m-2"><span class="text-danger">Content</span> {{info['content']}}</p>
-          <p class="card-text m-2"><span class="text-danger">Created At</span> {{info['created_at']}}</p>
+          {% for info in data.timeline_posts %}
+          <div
+            class="card border-none text-center shadow-lg mb-5"
+            id="mytimeline"
+          >
+            <p class="card-text m-2">
+              <span class="text-danger">Name</span> {{info['name']}}
+            </p>
+            <p class="card-text m-2">
+              <span class="text-danger">Email</span> {{info['email']}}
+            </p>
+            <p class="card-text m-2">
+              <span class="text-danger">Content</span> {{info['content']}}
+            </p>
+            <p class="card-text m-2">
+              <span class="text-danger">Created At</span> {{info['created_at']}}
+            </p>
+          </div>
+          {% endfor %}
         </div>
-        {% endfor %}
       </div>
     </div>
-  </div>
-</div>
 
-{% endblock %}
+    <script>
+      /* Sending the formData object as payload using Fetch */
+
+      const form = document.getElementById("form");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const payload = new FormData(form);
+        console.log(payload.entries());
+
+        const fetch = fetch("/api/timeline_post", {
+          method: "POST",
+          body: payload,
+        })
+          .then((res) => res.json())
+          .then((data) => console.log(data))
+          .catch((error) => console.log("error", error))
+          .finally(function () {
+            window.location.reload();
+          });
+      });
+    </script>
+  </div>
+
+  {% endblock %}
+</div>
