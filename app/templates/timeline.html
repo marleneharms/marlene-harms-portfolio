@@ -50,35 +50,14 @@
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
   <!-- show the newly added timeline post -->
-
-  <!-- <h1>Timeline Data</h1>
-  <div class="card border-dark mb-3" style="width: 18rem">
-    <div class="card-body">
-      <div class="row justify-content-center m-3">
-        <div class="col">
-          {% for info in data.timeline_posts %}
-          <div
-            class="card border-none text-center shadow-lg mb-5"
-            id="mytimeline"
-          >
-            <p class="card-text m-2">
-              <span class="text-danger">Name</span> {{info['name']}}
-            </p>
-            <p class="card-text m-2">
-              <span class="text-danger">Email</span> {{info['email']}}
-            </p>
-            <p class="card-text m-2">
-              <span class="text-danger">Content</span> {{info['content']}}
-            </p>
-            <p class="card-text m-2">
-              <span class="text-danger">Created At</span> {{info['created_at']}}
-            </p>
-          </div>
-          {% endfor %}
-        </div>
+  <div id="timeline-post">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{ name }}</h5>
+        <p class="card-text">{{ content }}</p>
+        <p class="card-text"><small class="text-muted">{{ email }}</small></p>
       </div>
     </div>
-  </div> -->
 </div>
 <script>
   const form = document.getElementById("form");
@@ -95,6 +74,26 @@
       window.location.reload();
     });
   });
+
+  // show the last timeline with get request
+  fetch('/api/timeline_post').then((res) => {
+    res.json().then((data) => {
+      const timelinePost = document.getElementById("timeline-post");
+      const name = data.name;
+      const content = data.content;
+      const email = data.email;
+      timelinePost.innerHTML = `
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">${name}</h5>
+          <p class="card-text">${content}</p>
+          <p class="card-text"><small class="text-muted">${email}</small></p>
+        </div>
+      </div>
+      `;
+    });
+  });
+
 </script>
 
 {% endblock %}
