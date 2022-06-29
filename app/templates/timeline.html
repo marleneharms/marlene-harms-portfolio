@@ -58,6 +58,7 @@
         <p class="card-text"><small class="text-muted">{{ email }}</small></p>
       </div>
     </div>
+    </div>
 </div>
 <script>
   const form = document.getElementById("form");
@@ -72,25 +73,6 @@
       body: payload,
     }).then(() => {
       window.location.reload();
-    });
-  });
-
-  // show the last timeline with get request
-  fetch('/api/timeline_post').then((res) => {
-    res.json().then((data) => {
-      const timelinePost = document.getElementById("timeline-post");
-      const name = data.name;
-      const content = data.content;
-      const email = data.email;
-      timelinePost.innerHTML = `
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">${name}</h5>
-          <p class="card-text">${content}</p>
-          <p class="card-text"><small class="text-muted">${email}</small></p>
-        </div>
-      </div>
-      `;
     });
   });
 
