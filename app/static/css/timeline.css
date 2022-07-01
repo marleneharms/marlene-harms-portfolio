@@ -19,7 +19,9 @@
   /* Smooth boz shadow */
   box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.5);
 }
-
+#timeline {
+    grid-column: 1/-1;
+}
 .card {
   /* Add shadows to create the "card" effect */
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
