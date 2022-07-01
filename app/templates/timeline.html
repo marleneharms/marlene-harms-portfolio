@@ -72,7 +72,6 @@
   fetch("/api/timeline_post")
     .then((res) => res.json())
     .then((data) => {
-      data.time_line_posts.
       data.time_line_posts.forEach((post) => {
         const postDiv = document.createElement("div");
         postDiv.classList.add("post");
