@@ -20,7 +20,10 @@
   box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.5);
 }
 #timeline {
-    grid-column: 1/-1;
+  grid-column: 1/-1;
+  overflow: scroll;
+  height: 300px;
+  padding: 10px;
 }
 .card {
   /* Add shadows to create the "card" effect */
