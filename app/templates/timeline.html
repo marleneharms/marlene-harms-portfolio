@@ -49,16 +49,6 @@
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
-  <!-- show the newly added timeline post -->
-  <div id="timeline-post">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">{{ name }}</h5>
-        <p class="card-text">{{ content }}</p>
-        <p class="card-text"><small class="text-muted">{{ email }}</small></p>
-      </div>
-    </div>
-    </div>
 </div>
 <script>
   const form = document.getElementById("form");
@@ -68,14 +58,32 @@
 
     const payload = new FormData(form);
 
-    fetch('/api/timeline_post', {
+    fetch("/api/timeline_post", {
       method: "POST",
       body: payload,
     }).then(() => {
       window.location.reload();
     });
   });
-
+  //<!-- show the newly added timeline post using get request -->
+  fetch("/api/timeline_post")
+    .then((res) => res.json())
+    .then((data) => {
+      data.forEach((post) => {
+        const postDiv = document.createElement("div");
+        postDiv.classList.add("post");
+        postDiv.innerHTML = `
+        <div class="post-header">
+          <h3>${post.name}</h3>
+          <p>${post.email}</p>
+        </div>
+        <div class="post-content">
+          <p>${post.content}</p>
+        </div>
+        `;
+        document.body.appendChild(postDiv);
+      });
+    });
 </script>
 
 {% endblock %}
