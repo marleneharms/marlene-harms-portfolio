@@ -51,7 +51,7 @@
   </form>
   <div
     id="timeline"
-    style="overflow: scroll; height: 500px; width: 500px; padding: 10px;"
+    style="overflow: scroll; height: 500px; width: 500px; padding: 10px"
   ></div>
 </div>
 
@@ -77,15 +77,11 @@
     .then((data) => {
       data.time_line_posts.forEach((post) => {
         const postDiv = document.createElement("div");
-        postDiv.classList.add("post");
+        postDiv.classList.add("card");
         postDiv.innerHTML = `
-        <div class="card">
-          <div class="container">
-            <h4><b>${post.name}</b></h4>
-            <p>${post.email}</p>
-            <p>${post.content}</p>
-          </div>
-        </div>
+          <h4><b>${post.name}</b></h4>
+          <p>${post.email}</p>
+          <p>${post.content}</p>
         `;
         timeline.appendChild(postDiv);
       });
