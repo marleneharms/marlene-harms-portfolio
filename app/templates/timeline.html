@@ -49,7 +49,7 @@
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
-  <div id="timeline" ></div>
+  <div id="timeline" style="overflow:scroll; height:100px; width:200px;"></div>
 </div>
 
 <script>
@@ -72,6 +72,7 @@
   fetch("/api/timeline_post")
     .then((res) => res.json())
     .then((data) => {
+      data.time_line_posts.
       data.time_line_posts.forEach((post) => {
         const postDiv = document.createElement("div");
         postDiv.classList.add("post");
@@ -84,6 +85,7 @@
           <p>${post.content}</p>
         </div>
         `;
+        timeline
         timeline.appendChild(postDiv);
       });
     });
