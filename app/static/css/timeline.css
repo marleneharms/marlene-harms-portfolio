@@ -26,6 +26,7 @@
   transition: 0.3s;
   margin-bottom: 10px;
   border-radius: 5px;
+  text-align: center;
 }
 
 /* On mouse-over, add a deeper shadow */
