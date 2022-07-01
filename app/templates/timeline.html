@@ -49,9 +49,12 @@
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
+  <div id="timeline" ></div>
 </div>
+
 <script>
   const form = document.getElementById("form");
+  const timeline = document.getElementById("timeline");
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -69,7 +72,7 @@
   fetch("/api/timeline_post")
     .then((res) => res.json())
     .then((data) => {
-      data.forEach((post) => {
+      data.time_line_posts.forEach((post) => {
         const postDiv = document.createElement("div");
         postDiv.classList.add("post");
         postDiv.innerHTML = `
@@ -81,7 +84,7 @@
           <p>${post.content}</p>
         </div>
         `;
-        document.body.appendChild(postDiv);
+        timeline.appendChild(postDiv);
       });
     });
 </script>
