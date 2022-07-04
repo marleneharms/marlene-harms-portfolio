@@ -1,19 +1,25 @@
+from operator import inv
 import os
 import datetime
 from playhouse.shortcuts import model_to_dict 
 from peewee import *
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, Response
 from dotenv import load_dotenv
 
 load_dotenv()
 app = Flask(__name__)
 
-mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
-    user=os.getenv("MYSQL_USER"),
-    passwd=os.getenv("MYSQL_PASSWORD"),
-    host=os.getenv("MYSQL_HOST"),
-    port=3306
-)
+if os.getenv("TESTING") == "true":
+    print("Running in test mode")
+    mydb = SqliteDatabase('file:memory?mode=memory&cache=shared', uri=True)
+
+else:
+    mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
+        user=os.getenv("MYSQL_USER"),
+        passwd=os.getenv("MYSQL_PASSWORD"),
+        host=os.getenv("MYSQL_HOST"),
+        port=3306
+    )
 
 print(mydb)
 
@@ -39,6 +45,45 @@ placesData = {
 
 @app.route('/api/timeline_post', methods=['POST'])
 def post_time_line_post():
+
+    #name = request.form['name']
+    #print(name)
+   # print("hello world")
+    
+    #This If Statement works when the html test is removed from the test_app.py file (meaning status code gets sent properly)
+
+    #if name is None:
+     #   invalidName = Response("Invalid name")
+      #  invalidName.status_code = 40
+       # return invalidName
+
+    try:
+        invalidName = Response("Invalid name")
+        invalidName.status_code = 400
+        name = request.form['name']
+        if name == "":
+            return invalidName
+    except KeyError:
+        return invalidName
+
+    try:
+        invalidContent = Response("Invalid content")
+        invalidContent.status_code = 400
+        content = request.form['content']
+        if content == "":
+            return invalidContent
+    except KeyError:
+        return invalidContent
+
+    try:
+        invalidEmail = Response("Invalid email")
+        invalidEmail.status_code = 400
+        email = request.form['email']
+        if email == "" or email == "not-an-email":
+            return invalidEmail
+    except KeyError:
+        return invalidEmail
+
     name = request.form['name']
     email = request.form['email']
     content = request.form['content']
