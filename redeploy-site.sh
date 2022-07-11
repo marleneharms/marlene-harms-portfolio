@@ -1,8 +1,7 @@
-#!/usr/bin/env bash
-tmux kill-server
-cd marlene-harms-portfolio
+#!/bin/bash
+
+cd /root/project-elegant-elephant-myversion
 git fetch && git reset origin/main --hard
-source python3-virtualenv/bin/activate
-pip install -r requirements.txt
-systemctl restart myportfolio.service
+docker compose -f docker-compose.prod.yml down
+docker compose -f docker-compose.prod.yml up -d --build
 echo "Everything is working:D"
