@@ -45,6 +45,33 @@ placesData = {
 
 @app.route('/api/timeline_post', methods=['POST'])
 def post_time_line_post():
+    try:
+        invalidName = Response("Invalid name")
+        invalidName.status_code = 400
+        name = request.form['name']
+        if name == "":
+            return invalidName
+    except KeyError:
+        return invalidName
+
+    try:
+        invalidContent = Response("Invalid content")
+        invalidContent.status_code = 400
+        content = request.form['content']
+        if content == "":
+            return invalidContent
+    except KeyError:
+        return invalidContent
+
+    try:
+        invalidEmail = Response("Invalid email")
+        invalidEmail.status_code = 400
+        email = request.form['email']
+        if email == "" or email == "not-an-email":
+            return invalidEmail
+    except KeyError:
+        return invalidEmail
+        
     name = request.form['name']
     email = request.form['email']
     content = request.form['content']
