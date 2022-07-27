@@ -13,3 +13,7 @@ body {
 footer {
   background-color: var(--bg-white);
 }
+
+.nav {
+  background-color: var(--bg-white);
+}
