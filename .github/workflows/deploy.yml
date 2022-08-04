@@ -32,8 +32,4 @@ jobs:
           SSH_IP: ${{ secrets.SSH_IP }}
 
       - name: Deploy Site
-        run: ssh my-vps 'cd ${{ secrets.PROJECT_ROOT }} && chmod +x scripts/redeploy-site.sh &&./scripts/redeploy-site.sh && curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content= Deployment Successful"'
-
-      - name: Failure to Deploy Site
-        if: ${{ failure() }}
-        run: ssh my-vps 'curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content= Deployment Failed"'
+        run: ssh my-vps '~/redeploy-site.sh'
